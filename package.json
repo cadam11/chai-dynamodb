@@ -1,7 +1,8 @@
 {
-  "name": "chai-luxon",
+  "name": "chai-dynamodb",
   "version": "0.1.0",
-  "description": "DateTime assertions for Chai, powered by Luxon",
+  "description": "AWS DynamoDB reserved word assertions for Chai",
+  "repository": "github:cadam11/chai-dynamodb",
   "main": "index.js",
   "scripts": {
     "lint": "eslint index.js /test",
