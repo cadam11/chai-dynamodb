@@ -1,13 +1,18 @@
 {
   "name": "chai-dynamodb",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "AWS DynamoDB reserved word assertions for Chai",
   "repository": "github:cadam11/chai-dynamodb",
-  "main": "index.js",
+  "main": "./index",
+  "types": "./types/index.d.ts",
   "scripts": {
+    "build": "yarn build:js && yarn build:ts",
+    "prebuild:js": "rm -rf dist && mkdir dist",
+    "build:js": "simplifyify lib/dynamodb.js --outfile dist/chai-dynamodb.js --bundle --debug --minify --standalone chaiDynamodb",
+    "build:ts": "cd types && tsc",
     "lint": "eslint index.js /test",
-    "test": "nyc mocha",
-    "pretest": "npm run lint"
+    "pretest": "yarn lint",
+    "test": "nyc mocha"
   },
   "keywords": [
     "chai",
@@ -24,9 +29,17 @@
     "chai": "^4.2.0",
     "eslint": "^2.8.0",
     "mocha": "^8.2.1",
-    "nyc": "^15.1.0"
+    "nyc": "^15.1.0",
+    "simplifyify": "^8.0.4",
+    "typescript": "^4.2.4"
   },
   "peerDependencies": {
     "chai": ">= 4.0.0"
+  },
+  "dependencies": {
+    "@types/chai": "^4.2.16"
+  },
+  "engines": {
+    "node": ">=10"
   }
 }

@@ -1,8 +1,5 @@
 const chai = require('chai');
-const chaiDynamodb = require('../index.js');
-
-chai.use(chaiDynamodb);
-
+chai.use(require('../'));
 chai.should();
 const assert = chai.assert;
 const expect = chai.expect;
