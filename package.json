@@ -1,10 +1,16 @@
 {
   "name": "chai-dynamodb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AWS DynamoDB reserved word assertions for Chai",
   "repository": "github:cadam11/chai-dynamodb",
   "main": "./index",
   "types": "./types/index.d.ts",
+  "files": [
+    "dist/chai-dynamodb.js",
+    "lib/*.js",
+    "index.js",
+    "types/index.d.ts"
+  ],
   "scripts": {
     "build": "yarn build:js && yarn build:ts",
     "prebuild:js": "rm -rf dist && mkdir dist",
